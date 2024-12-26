@@ -61,7 +61,7 @@ export const Navbar = () => {
             (item, index) => (
               <button
                 key={index}
-                className="bg-[#FEEAD6] px-3 py-2 text-xs sm:text-xs md:text-xs lg:text-sm xl:text-lg text-[#F47930] font-bold rounded-3xl"
+                className="bg-[#FEEAD6] px-3 py-2 text-xs sm:text-xs md:text-xs lg:text-sm xl:text-lg text-[#F47930] font-bold rounded-3xl cursor-pointer"
               >
                 {item}
               </button>

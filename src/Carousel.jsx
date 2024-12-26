@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel"
 const ImageCarousel = ()=>{
     
     return(
-        <div className="w-[90%] max-w-[800px] mx-auto">
+        <div className="w-[90%] max-w-[1400px] mx-auto">
             <Carousel 
             showThumbs={false}
             autoPlay={true}
