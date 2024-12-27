@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,12 +71,18 @@ export const Navbar = () => {
           <ul className="flex flex-wrap gap-x-4 gap-y-2">
             {navItems.map((item, index) => (
               <li key={index} className="mb-2 lg:mb-0">
-                <Link
+                <NavLink
                   to={item.path}
-                  className="px-3 py-2 text-xs sm:text-xs md:text-xs lg:text-sm xl:text-lg font-bold hover:text-[#BC3612] transition-all"
+                  className={({ isActive }) =>
+                    `px-3 py-2 text-xs sm:text-xs md:text-xs lg:text-sm xl:text-lg font-bold transition-all ${
+                      isActive
+                        ? "text-[#BC3612] underline underline-offset-4"
+                        : "hover:text-[#BC3612]"
+                    }`
+                  }
                 >
                   {item.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -89,12 +95,18 @@ export const Navbar = () => {
           <ul className="space-y-2">
             {navItems.map((item, index) => (
               <li key={index}>
-                <Link
+                <NavLink
                   to={item.path}
-                  className="block w-full text-left px-3 py-2 text-sm font-bold hover:text-[#BC3612] transition-all"
+                  className={({ isActive }) =>
+                    `block w-full text-left px-3 py-2 text-sm font-bold transition-all ${
+                      isActive
+                        ? "text-[#BC3612] underline underline-offset-4"
+                        : "hover:text-[#BC3612]"
+                    }`
+                  }
                 >
                   {item.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
