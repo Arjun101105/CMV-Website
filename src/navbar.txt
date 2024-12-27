@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,16 +6,6 @@ export const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about-us" },
-    { name: "Activities", path: "/activities" },
-    { name: "Volunteer / Join Us", path: "/volunteer" },
-    { name: "Donate", path: "/donate" },
-    { name: "Contact Us", path: "/contact-us" },
-    { name: "Events", path: "/events" },
-  ];
 
   return (
     <>
@@ -66,39 +55,35 @@ export const Navbar = () => {
           </button>
         </div>
 
-        {/* Navigation Section */}
-        <nav className="hidden lg:flex flex-wrap items-center">
-          <ul className="flex flex-wrap gap-x-4 gap-y-2">
-            {navItems.map((item, index) => (
-              <li key={index} className="mb-2 lg:mb-0">
-                <Link
-                  to={item.path}
-                  className="px-3 py-2 text-xs sm:text-xs md:text-xs lg:text-sm xl:text-lg font-bold rounded-3xl hover:bg-cyan-200 transition-all"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {/* Button Section for Desktop */}
+        <div className="hidden lg:flex flex-wrap items-center space-x-2 lg:space-x-4">
+          {["Home", "About Us", "Activities", "Volunteer / Join Us", "Donate", "Contact Us", "Events"].map(
+            (item, index) => (
+              <button
+                key={index}
+                className="bg-cyan-200 px-3 py-2 text-xs sm:text-xs md:text-xs lg:text-sm xl:text-lg text font-bold rounded-3xl"
+              >
+                {item}
+              </button>
+            )
+          )}
+        </div>
       </div>
 
       {/* Dropdown Menu for Mobile */}
       {isOpen && (
-        <nav className="lg:hidden bg-[#FEF6EE] px-4 py-4">
-          <ul className="space-y-2">
-            {navItems.map((item, index) => (
-              <li key={index}>
-                <Link
-                  to={item.path}
-                  className="block w-full text-left px-3 py-2 text-sm text-[#F47930] font-bold rounded-3xl hover:bg-[#FEEAD6] transition-all"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="lg:hidden bg-[#FEF6EE] px-4 py-4">
+          {["Home", "About Us", "Activities", "Volunteer / Join Us", "Donate", "Contact Us", "Events"].map(
+            (item, index) => (
+              <button
+                key={index}
+                className="block w-full text-left bg-[#FEEAD6] px-3 py-2 text-sm text-[#F47930] font-bold rounded-3xl mb-2"
+              >
+                {item}
+              </button>
+            )
+          )}
+        </div>
       )}
     </>
   );
