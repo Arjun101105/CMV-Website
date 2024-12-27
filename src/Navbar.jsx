@@ -20,7 +20,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="h-auto bg-cyan-50 px-4 lg:px-16 flex justify-between items-center shadow-lg">
+      <div className="h-auto px-4 lg:px-16 flex justify-between items-center shadow-lg">
         {/* Logo Section */}
         <div className="flex items-center space-x-4">
           <div className="pt-1">
@@ -73,7 +73,7 @@ export const Navbar = () => {
               <li key={index} className="mb-2 lg:mb-0">
                 <Link
                   to={item.path}
-                  className="px-3 py-2 text-xs sm:text-xs md:text-xs lg:text-sm xl:text-lg font-bold rounded-3xl hover:bg-cyan-200 transition-all"
+                  className="px-3 py-2 text-xs sm:text-xs md:text-xs lg:text-sm xl:text-lg font-bold hover:text-[#BC3612] transition-all"
                 >
                   {item.name}
                 </Link>
@@ -85,13 +85,13 @@ export const Navbar = () => {
 
       {/* Dropdown Menu for Mobile */}
       {isOpen && (
-        <nav className="lg:hidden bg-[#FEF6EE] px-4 py-4">
+        <nav className="lg:hidden px-4 py-4">
           <ul className="space-y-2">
             {navItems.map((item, index) => (
               <li key={index}>
                 <Link
                   to={item.path}
-                  className="block w-full text-left px-3 py-2 text-sm text-[#F47930] font-bold rounded-3xl hover:bg-[#FEEAD6] transition-all"
+                  className="block w-full text-left px-3 py-2 text-sm font-bold hover:text-[#BC3612] transition-all"
                 >
                   {item.name}
                 </Link>

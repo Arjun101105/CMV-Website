@@ -9,7 +9,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Navbar/>
+    <Navbar/><br/>
     <Routes>
       <Route path='/' element={<ImageCarousel/>} />
     </Routes>

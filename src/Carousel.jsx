@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel"
 const ImageCarousel = ()=>{
     
     return(
-        <div className="bg-cyan-50 pt-10">
+        
         <div className="w-[90%] max-w-[1400px] mx-auto ">
             <Carousel 
             showThumbs={false}
@@ -40,7 +40,6 @@ const ImageCarousel = ()=>{
                     <p className="legend">CMV Bike Ride 2022</p>
                 </div>
             </Carousel>
-        </div>
         </div>
     )
     
